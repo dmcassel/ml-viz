@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title></title>
+  <link href="/advancedsearch.css" rel="stylesheet">
+  <script type="text/javascript" src="/jquery-1.8.3.min.js"><!-- --></script>
+  <script type="text/javascript" src="/jquery-ui-1.8.22.min.js"><!-- --></script>
+  <script type="text/javascript" src="/advancedsearch.js"><!-- --></script>
+  <script src="/marklogic_mlviz/lib/controller.js" type="text/javascript" xml:space="preserve"><!-- --></script>
+  <script src="/marklogic_mlviz/lib/widget.js" type="text/javascript" xml:space="preserve"><!-- --></script>
+  <script src="/marklogic_mlviz/lib/viz/search/search.js" type="text/javascript" xml:space="preserve"><!-- --></script>
+  <script type="text/javascript">
+    $(function () {
+
+      var advancedSearch =
+        {
+          clearQuerySel = "#clear-query",
+          "fields": {
+          "field": [
+            {
+              "label": "Social Issue",
+              "id": "socialIssue",
+              "placeholder": "Social Issues",
+              "name": "socialIssue",
+              "suggest": true
+            },
+            {
+              "label": "Stuff",
+              "id": "stuff",
+              "placeholder": "some stuff",
+              "name": "stuff",
+              "suggest": false
+            }
+          ]
+        }};
+
+      var search = ML.createSearch("search");
+      var as = ML.createAdvancedSearch("advancedSearchForm", advancedSearch);
+
+      $("#advancedSearchForm").hide();
+      $("#advancedSearch").click(function () {
+        if ($("#advancedSearchForm").is(":hidden")) {
+          $("#advancedSearchForm").slideDown("slow");
+        } else {
+          $("#advancedSearchForm").slideUp("slow");
+        }
+      });
+
+      $("#clear-query").function () {
+        as.clearQuery();
+      }
+    });
+  </script>
+</head>
+ <body>
+  <div id="search" class="widget"><!-- --></div>
+  <button id="advancedSearch">Click me</button>
+  <div id="advancedSearchForm" class="widget"><!-- --></div>
+ </body>
+</html>
