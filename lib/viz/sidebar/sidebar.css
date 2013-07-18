@@ -17,7 +17,7 @@ limitations under the License.
 /*  Sidebar Widget Styling - covers styling for widget generated HTML */
 /* Facet list styles */
 div.facet-list {
-  padding: 7px 0 7px 0; 
+  padding: 7px 0 7px 0;
   margin-left: 10px;
 }
 div.facet-list div.facet-title-label {
@@ -31,11 +31,11 @@ div.facet-list div.facet-title-label {
 }
 div.facet-title a {
   padding-left: 2px;
-  line-height: 16px; 
+  line-height: 16px;
 }
 li.facet-item {
   padding-left: 17px;
-  line-height: 16px; 
+  line-height: 16px;
 }
 li.facet-item .count {
   color: #666666;
@@ -78,5 +78,36 @@ div.chiclet .close-chiclet a {
 }
 .facet-list .tipdown.open {
   background-position: 0 -10px;
+}
+
+.facet-list > ul {
+  position: relative;
+}
+
+.facet-list .other {
+  margin-bottom: 0;
+  width: 135px;
+}
+
+.facet-list ul.suggestions {
+  background-color: white;
+  border: 1px solid #ccc;
+  display: none;
+  margin-left: 0px;
+  position: absolute;
+  z-index: 10;
+}
+
+.facet-list ul.suggestions li {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.facet-list ul.suggestions li:hover {
+  background-color: #EEEEEE;
+}
+
+.facet-list ul.suggestions.show {
+  display: block;
 }
 
